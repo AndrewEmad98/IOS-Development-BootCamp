@@ -18,21 +18,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func buttonClicked(_ sender: Any) {
-        let myButton : UIButton = sender as! UIButton
-        let myLabel = myButton.currentTitle!
-        myButton.alpha = 0.5
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        
+        let myLabel = sender.currentTitle
+        sender.alpha = 0.5
         playSound(buttonLabel: myLabel)
         print("Start")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
             print("End")
-            myButton.alpha = 1
+            sender.alpha = 1
         }
     }
     
     func playSound(buttonLabel : String?) {
-        
-        guard let url = Bundle.main.url(forResource: buttonLabel!, withExtension: "wav") else {return}
+        if buttonLabel == nil {
+            return
+        }
+        guard let url = Bundle.main.url(forResource: buttonLabel, withExtension: "wav") else {return}
         do {
             // run the audio even if phone is silent
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
