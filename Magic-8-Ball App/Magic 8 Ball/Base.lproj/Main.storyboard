@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Magic_8_Ball" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="IZE-nv-KAS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pez-EE-KRt" userLabel="TopView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="159.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Me Anything" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftj-Ff-PS2">
+                                                <rect key="frame" x="50.5" y="61.5" width="219.5" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Ftj-Ff-PS2" firstAttribute="centerY" secondItem="pez-EE-KRt" secondAttribute="centerY" id="334-Dw-VDF"/>
+                                            <constraint firstItem="Ftj-Ff-PS2" firstAttribute="centerX" secondItem="pez-EE-KRt" secondAttribute="centerX" id="PTs-KM-aLO"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="NQu-dD-Nmb" userLabel="MiddleView">
+                                        <rect key="frame" x="0.0" y="160.5" width="320" height="159"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball1" translatesAutoresizingMaskIntoConstraints="NO" id="gfW-5K-Tup">
+                                                <rect key="frame" x="7.5" y="0.0" width="305" height="159"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gfW-5K-Tup" firstAttribute="centerX" secondItem="NQu-dD-Nmb" secondAttribute="centerX" id="KQ1-bq-Lso"/>
+                                            <constraint firstItem="gfW-5K-Tup" firstAttribute="top" secondItem="NQu-dD-Nmb" secondAttribute="top" id="qoR-kN-DXV"/>
+                                            <constraint firstAttribute="bottom" secondItem="gfW-5K-Tup" secondAttribute="bottom" id="t18-aQ-18u"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="m2U-Q1-YSO" userLabel="BottomView">
+                                        <rect key="frame" x="0.0" y="320.5" width="320" height="159.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hje-7F-tZK">
+                                                <rect key="frame" x="96" y="55.5" width="128" height="49"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Ask">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="askButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eJW-Wv-5at"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="hje-7F-tZK" firstAttribute="width" secondItem="m2U-Q1-YSO" secondAttribute="width" multiplier="0.4" id="O4e-tG-WhF"/>
+                                            <constraint firstItem="hje-7F-tZK" firstAttribute="centerX" secondItem="m2U-Q1-YSO" secondAttribute="centerX" id="onp-ZC-zs8"/>
+                                            <constraint firstItem="hje-7F-tZK" firstAttribute="centerY" secondItem="m2U-Q1-YSO" secondAttribute="centerY" id="yeS-Fu-ow8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IZE-nv-KAS" secondAttribute="bottom" id="AC6-D7-fs1"/>
+                            <constraint firstItem="IZE-nv-KAS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Grk-F5-AA8"/>
+                            <constraint firstItem="IZE-nv-KAS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LdW-i0-GPQ"/>
+                            <constraint firstItem="IZE-nv-KAS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NU7-st-ezh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ballImageView" destination="gfW-5K-Tup" id="LuB-7S-tbY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ball1" width="305" height="273.5"/>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
