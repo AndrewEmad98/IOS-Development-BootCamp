@@ -35,6 +35,7 @@ class CalculationViewController: UIViewController {
         let pWeight = Int(weightSliderOutlet.value)
         bmi.setPersonValues(weight: pWeight, height: pHeight)
         bmi.calculateBMI()
+        
 
         self.performSegue(withIdentifier: "GoToResult", sender: self)
     }
