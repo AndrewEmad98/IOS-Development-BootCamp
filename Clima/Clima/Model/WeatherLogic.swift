@@ -17,6 +17,7 @@ struct WeatherManagment {
     
     var delegate : DealWithWeatherDelegate? = nil
     
+    // ADD YOUR API KEY
     let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?appid=ADD YOUR API KEY &units=metric"
     
     func getWeatherByCityName (cityName : String){
